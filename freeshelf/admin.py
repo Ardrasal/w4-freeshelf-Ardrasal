@@ -15,3 +15,4 @@ class CategoriesAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('book',)}
 
 admin.site.register(Book, BookAdmin)
+admin.site.register(Categories, CategoriesAdmin)
