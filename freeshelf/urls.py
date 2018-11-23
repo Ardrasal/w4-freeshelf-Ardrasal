@@ -20,8 +20,8 @@ from freeshelf import views
 
 urlpatterns = [
     path('', views.index, name='home'),
-    path('favorite/', TemplateView.as_view(template_name='favorite.html'),
-         name='favorite'),
+    path('favorites/', TemplateView.as_view(template_name='favorites.html'),
+         name='favorites'),
     path('category/', TemplateView.as_view(template_name='category.html'),
          name='category'),
     path('books/<slug>/', views.book_detail, name='book_detail'),

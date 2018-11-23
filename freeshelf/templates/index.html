@@ -4,12 +4,13 @@
 {% endblock title %}
 
 {% block content %}
-    {% comment %} {% for book in books %}
-    {% if book.category == True %}
-    <h2>{{ book.name }}</h2>
-    <p>{{ book.description }}</p>
+    {% for book in books %}
+    {% comment %} {% if book.category == True %} {% endcomment %}
+    {% comment %} <h2>{{ book.name }}</h2> {% endcomment %}
+    {% comment %} <p>{{ book.description }}</p> {% endcomment %}
     <h2><a href="{% url 'book_detail' slug=book.slug %}">{{ book.name }}</a></h2>
+    <p>{{ book.author }}</p>
     <p>{{ book.description }}</p>
-    {% endif %}
-    {% endfor %} {% endcomment %}
+    {% comment %} {% endif %} {% endcomment %}
+    {% endfor %}
 {% endblock content %}
