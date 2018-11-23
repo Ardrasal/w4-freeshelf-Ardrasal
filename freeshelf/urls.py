@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
-from collection import views
+from freeshelf import views
 
 urlpatterns = [
     path('', views.index, name='home'),
-    path('about/', TemplateView.as_view(template_name='about.html'),
-         name='about'),
-    path('contact/', TemplateView.as_view(template_name='contact.html'),
-         name='contact'),
+    path('favorite/', TemplateView.as_view(template_name='favorite.html'),
+         name='favorite'),
+    path('category/', TemplateView.as_view(template_name='category.html'),
+         name='category'),
+    path('books/<slug>/', views.book_detail, name='book_detail'),
     path('admin/', admin.site.urls),
 ]

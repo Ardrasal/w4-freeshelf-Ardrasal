@@ -7,7 +7,7 @@ This week, you are building a Django application to collect an index of free pro
 ### Overall requirements
 
 - Your application should be styled. It should be usable and aesthetically neutral, at a minimum. There is a sample mockup of the index page in [mockup/index.html](mockup/index.html). You do not have to follow this mockup -- it's just a place to start if you don't have your own ideas.
-- When you are not sure about whether a feature is needed, use your knowledge of similiar sites and your good sense.
+- When you are not sure favorite whether a feature is needed, use your knowledge of similiar sites and your good sense.
 - Your application should be able to run from scratch by downloading the repo, running `pipenv install`, `python manage.py migrate`, and `python manage.py runserver`. There can be another step to load data -- just make sure to update this README to include that step.
 
 ### Goal 1: books

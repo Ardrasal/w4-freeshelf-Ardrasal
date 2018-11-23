@@ -4,19 +4,19 @@
 <head>
     <title>
         {% block title %}
-            Free Shelf
+            Freeshelf
         {% endblock title %}
     </title>
    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
 <body>
     <header>
-        <h1>Free Shelf App</h1>
+        <h1>Freeshelf App</h1>
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'favorite' %}">Favorites</a></li>
+                <li><a href="{% url 'category' %}">Category</a></li>
             </ul>
         </nav>
         </header>

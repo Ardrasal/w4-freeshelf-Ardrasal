@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+    Homepage - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+    {% comment %} {% for book in books %}
+    {% if book.category == True %}
+    <h2>{{ book.name }}</h2>
+    <p>{{ book.description }}</p>
+    <h2><a href="{% url 'book_detail' slug=book.slug %}">{{ book.name }}</a></h2>
+    <p>{{ book.description }}</p>
+    {% endif %}
+    {% endfor %} {% endcomment %}
+{% endblock content %}
