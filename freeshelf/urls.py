@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
 from freeshelf import views
+# from freeshelf.templates import books
 
 urlpatterns = [
     path('', views.index, name='home'),
@@ -25,5 +26,6 @@ urlpatterns = [
     path('category/', TemplateView.as_view(template_name='category.html'),
          name='category'),
     path('books/<slug>/', views.book_detail, name='book_detail'),
+    path('books/<slug>/edit/', views.edit_book, name='edit_book'),
     path('admin/', admin.site.urls),
 ]

@@ -9,15 +9,15 @@ class Book(models.Model):
     # category = models.CharField(max_length=50)
     slug = models.SlugField(unique=True)
 
-    # def get_categories(self):
-    #     categories = []
-    #     if self.fiction:
-    #         categories.append("Fiction")
-    #     if self.classic:
-    #         categories.append("Classic")
-    #     if self.non_fiction:
-    #         categories.append("Nonfiction")
-    #     return categories
+    def get_categories(self):
+        categories = []
+        if self.fiction:
+            categories.append("Fiction")
+        if self.classic:
+            categories.append("Classic")
+        if self.non_fiction:
+            categories.append("Nonfiction")
+        return categories
 
     def save(self, *args, **kwargs):
         if not self.id:

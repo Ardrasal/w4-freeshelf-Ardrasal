@@ -7,4 +7,7 @@
     <h2>{{ book.name }}</h2>
     <p>{{ book.description }}</p>
     {% comment %} <p>{{ book.category }}</p> {% endcomment %}
+    <a href="{% url 'edit_book' slug=book.slug %}">
+        Edit me!
+    </a>
 {% endblock content %}

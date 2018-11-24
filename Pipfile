@@ -9,6 +9,7 @@ django-extensions = "*"
 pillow = "*"
 werkzeug = "*"
 django-crispy-forms = "*"
+django-registration-redux = "==2.0"
 
 [dev-packages]
 
