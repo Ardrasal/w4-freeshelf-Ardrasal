@@ -16,11 +16,13 @@ def book_detail(request, slug):
 def edit_book(request, slug):
     book = Book.objects.get(slug=slug)
     form_class = SearchForm
+    # form = form_class
     if request.method == 'POST':
         form = form_class(data=request.POST, instance=book)
         if form.is_valid():
+            # form = form_class(instance=book)
             form.save()
             return redirect('book_detail', slug=book.slug)
-        else:
-            form = form_class(instance=book)
-        return render(request, 'books/edit_book.html', {'book': book, 'form': form, })
+    else:
+        form = form_class(instance=book)
+    return render(request, 'books/edit_book.html', {'book': book, 'form': form, })

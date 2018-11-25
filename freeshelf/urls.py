@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.views.generic import TemplateView
 from freeshelf import views
 # from freeshelf.templates import books
@@ -23,9 +23,14 @@ urlpatterns = [
     path('', views.index, name='home'),
     path('favorites/', TemplateView.as_view(template_name='favorites.html'),
          name='favorites'),
-    path('category/', TemplateView.as_view(template_name='category.html'),
-         name='category'),
+    path('fiction/', TemplateView.as_view(template_name='fiction.html'),
+         name='fiction'),
+    path('nonfiction/', TemplateView.as_view(template_name='nonfiction.html'),
+         name='nonfiction'),
+    path('classic/', TemplateView.as_view(template_name='classic.html'),
+         name='classic'),
     path('books/<slug>/', views.book_detail, name='book_detail'),
     path('books/<slug>/edit/', views.edit_book, name='edit_book'),
+    path('accounts/', include('registration.backends.simple.urls')),
     path('admin/', admin.site.urls),
 ]

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'freeshelf',
     'django_extensions',
     'registration',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 ACCOUNT_ACTIVATION_DAYS = 7
+LOGIN_REDIRECT_URL = "home"

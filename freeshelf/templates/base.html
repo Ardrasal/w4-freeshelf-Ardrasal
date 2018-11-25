@@ -12,12 +12,23 @@
 </head>
 <body>
     <header>
-        <h1>Freeshelf App</h1>
+        <h1>Freeshelf</h1>
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'favorites' %}">Favorites</a></li>
-                <li><a href="{% url 'category' %}">Category</a></li>
+                <li><a href="{% url 'fiction' %}">Fiction</a></li>
+                <li><a href="{% url 'nonfiction' %}">Nonfiction</a></li>
+                <li><a href="{% url 'classic' %}">Classic</a></li>
+                {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'auth_logout' %}">Logout</a>    
+                </li>
+                {% else %}
+                <li>
+                    <a href="{% url 'auth_login' %}">Login</a>
+                </li>
+                {% endif %}
             </ul>
         </nav>
         </header>
