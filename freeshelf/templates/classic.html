@@ -1,9 +1,14 @@
-{% extends 'base.html' %}
 {% block title %}
     Classic - {{ block.super }}
 {% endblock title %}
 
 {% block content %}
     <h1>Classic page</h1>
-    <p>Classic content.</p>
+    {% for book in books %}
+    {% if book.category == 'classic' %}
+    <h2><a href="{% url 'book_detail' slug=book.slug %}">{{ book.name }}</a></h2>
+    <p>{{ book.author }}</p>
+    <p>{{ book.description }}</p>
+    {% endif %} 
+    {% endfor %}
 {% endblock content %}

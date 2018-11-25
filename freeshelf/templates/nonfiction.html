@@ -5,5 +5,11 @@
 
 {% block content %}
     <h1>Nonfiction page</h1>
-    <p>Nonfiction content.</p>
+    {% for book in books %}
+    {% if book.category == 'fiction' %}
+    <h2><a href="{% url 'book_detail' slug=book.slug %}">{{ book.name }}</a></h2>
+    <p>{{ book.author }}</p>
+    <p>{{ book.description }}</p>
+    {% endif %} 
+    {% endfor %}
 {% endblock content %}

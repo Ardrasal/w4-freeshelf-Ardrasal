@@ -5,7 +5,7 @@ from freeshelf.models import Book
 
 class BookAdmin(admin.ModelAdmin):
     model = Book
-    list_display = ('name', 'author', 'description', 'date_added')
+    list_display = ('name', 'author', 'description', 'date_added', 'category',)
     prepopulated_fields = {'slug': ('name',)}
 
 

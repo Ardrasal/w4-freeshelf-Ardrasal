@@ -6,18 +6,18 @@ class Book(models.Model):
     author = models.CharField(max_length=50)
     description = models.TextField()
     date_added = models.DateField()
-    # category = models.CharField(max_length=50)
+    category = models.CharField(max_length=50)
     slug = models.SlugField(unique=True)
 
     def get_categories(self):
-        categories = []
+        category = []
         if self.fiction:
-            categories.append("Fiction")
+            category.append("Fiction")
         if self.classic:
-            categories.append("Classic")
+            category.append("Classic")
         if self.non_fiction:
-            categories.append("Nonfiction")
-        return categories
+            category.append("Nonfiction")
+        return category
 
     def save(self, *args, **kwargs):
         if not self.id:

@@ -27,5 +27,6 @@ class Command(BaseCommand):
                     author=row['author'],
                     description=row['description'],
                     date_added=row['date'],
+                    category=row['category'],
                 )
                 book.save()
